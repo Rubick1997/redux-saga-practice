@@ -4,6 +4,7 @@ const initialState = {
   users: [],
   loading: false,
   error: null,
+  fetchMap: null,
 };
 
 export default function users(state = initialState, action) {
@@ -12,6 +13,7 @@ export default function users(state = initialState, action) {
       return {
         ...state,
         loading: true,
+        fetchMap: action.payload,
       };
     case type.GET_USERS_SUCCESS:
       return {
